@@ -2,7 +2,9 @@ from qutip import *
 import matplotlib.pyplot as plt
 import numpy as np
 
-expectations = qload('test_expectations')
+folder_path = '/homes/pbrookes/PycharmProjects/cqed/cqed_simulations_qutip/results/crosscheck/2017-01-26--16-13-36'
+expectations_path = folder_path + '/expectations'
+expectations = qload(expectations_path)
 probabilities = np.array([expectations[x] for x in range(0, len(expectations))]);
 n_snaps = probabilities.shape[1]
 c_levels = probabilities.shape[0]
